@@ -2,20 +2,39 @@ const URL = "./"; // Path to the model files
 
 let model, webcam, labelContainer, maxPredictions;
 
+// Show loading spinner while setting up
+function showLoading() {
+    document.getElementById("loading-container").style.display = "block";
+}
+
+// Hide loading spinner once setup is complete
+function hideLoading() {
+    document.getElementById("loading-container").style.display = "none";
+}
+
 // Initialize the model and webcam
 async function init() {
+    // Show loading spinner when start is clicked
+    showLoading();
+
     const modelURL = URL + "model.json";
     const metadataURL = URL + "metadata.json";
 
+    // Load the model
     model = await tmImage.load(modelURL, metadataURL);
     maxPredictions = model.getTotalClasses();
 
     const flip = true; // Flip webcam for selfie mode
     webcam = new tmImage.Webcam(300, 300, flip);
+
+    // Set up webcam with permission
     await webcam.setup();
     await webcam.play();
-    window.requestAnimationFrame(loop);
 
+    // Hide the loading spinner once the webcam starts
+    hideLoading();
+
+    window.requestAnimationFrame(loop);
     document.getElementById("webcam-container").appendChild(webcam.canvas);
     labelContainer = document.getElementById("label-container");
 }
