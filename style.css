@@ -1,0 +1,106 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #1f1c2c, #928dab);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Container */
+.container {
+    text-align: center;
+    padding: 20px;
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
+    width: 90%;
+    max-width: 400px;
+}
+
+/* Header */
+header h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+header p {
+    font-size: 1em;
+    color: #ddd;
+    margin-bottom: 20px;
+}
+
+/* Webcam Container */
+#webcam-container {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+}
+
+canvas {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border: 2px solid #4caf50;
+    border-radius: 10px;
+}
+
+/* Button */
+button {
+    margin: 20px 0px 10px 0px;
+    padding: 15px 30px;
+    background: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+button:hover {
+    background: #45a049;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Label Container */
+#label-container {
+    margin-top: 20px;
+    font-size: 1em;
+    text-align: left;
+}
+
+#label-container div {
+    margin: 5px 0;
+}
+
+/* Footer */
+footer {
+    margin-top: 20px;
+    font-size: 0.8em;
+    color: #aaa;
+}
+
+footer strong {
+    color: #4caf50;
+}
+
+/* Label for identified friend */
+#label-container {
+    margin-top: 20px;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #4caf50;
+    text-align: center;
+}
